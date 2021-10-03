@@ -19,9 +19,11 @@ signals_df['SMA_Slow'] = signals_df['close'].rolling(window=long_window).mean()
   
   
 ```
-![image](https://user-images.githubusercontent.com/84649228/135738937-256c2dcf-7f92-4d7a-b094-2cd328671a7b.png)
+![image](https://user-images.githubusercontent.com/84649228/135740655-a6bb62f0-39c9-4b3b-9026-1ca4bc297823.png)
+
   
-![image](https://user-images.githubusercontent.com/84649228/135739647-1de43043-0582-4b33-bd45-b89fb9e93e6f.png)
+![image](https://user-images.githubusercontent.com/84649228/135740641-a6d9dba2-5d49-4244-afbd-ff14d553d899.png)
+
 
 
 
