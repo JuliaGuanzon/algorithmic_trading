@@ -31,7 +31,36 @@ signals_df['SMA_Slow'] = signals_df['close'].rolling(window=long_window).mean()
 
 <details>
 <summary>Tune the Baseline</summary>
+
+```
+training_end = X.index.min() + DateOffset(months=6) 
+``` 
+![image](https://user-images.githubusercontent.com/84649228/135740484-95e6fbad-cbde-4fb3-8b9e-cb95665b4106.png)
+
+```
+training_end = X.index.min() + DateOffset(months=1) 
+```  
+ ![image](https://user-images.githubusercontent.com/84649228/135740503-48207e2c-c639-47ce-99e3-34c21a50fae5.png)
+
  
+```
+short_window = 50
+long_window = 100
+``` 
+![image](https://user-images.githubusercontent.com/84649228/135740447-97db1d22-ef60-479a-bccc-c5006b725953.png)
+ 
+ 
+```
+short_window = 50
+long_window = 200
+``` 
+ ![image](https://user-images.githubusercontent.com/84649228/135740265-10a88449-535f-47e7-bd6e-56ab89c433db.png)
+
+```
+short_window = 100
+long_window = 200
+```  
+![image](https://user-images.githubusercontent.com/84649228/135740321-f43a7301-20da-4c91-9b57-e4fb8376cda2.png)
  
 
 </details>
