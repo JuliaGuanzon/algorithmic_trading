@@ -56,10 +56,9 @@ signals_df['SMA_Slow'] = signals_df['close'].rolling(window=long_window).mean()
 ![image](https://user-images.githubusercontent.com/84649228/135740119-66b66669-0eda-47b0-98c2-735d19b8c2ed.png)
 
 
-
-
 </details>
 
+<details>
 <summary>New Classifier-AdaBoost</summary>
 
 We trained the baseline data on a new classifier to see if we could get a better prediction outcome. For this, the use of Logisitic Regression was used. 
@@ -74,13 +73,14 @@ signals_df['SMA_Slow'] = signals_df['close'].rolling(window=long_window).mean()
   
   
 ```
-
 ![image](https://user-images.githubusercontent.com/84649228/135740067-0adc9622-9be9-4ed6-989a-ce477c33dc4b.png)
 ![image](https://user-images.githubusercontent.com/84649228/135740080-295e16c8-b447-4b68-a381-60f418e78bc0.png)
 
 
-
 </details>
+
+
+
 
 ## Summary
 
