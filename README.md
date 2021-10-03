@@ -2,31 +2,34 @@
 
 ## Overview of the Algorithmic Trading Enhancements
 
-The baseline algorithmic trading system that is being used has been very effective to the firm and has gained profits by users. Although this system is good, it can be better. We have narrowed down the be best enhancements for this system to better the predictive models. We went through multiple testings to find the best outcome possible. It's our goal to keep our competitive edge on our market.
+The baseline algorithmic trading system that is being used has been very effective to the firm and has gained profits by users. Although this system is good, there is always room for improvement. We have narrowed down the be best enhancements for this system to better the predictive models. We went through multiple testings to find the best outcome possible. It's our goal to keep our competitive edge on our market.
 
 ## Results
 
 <details>
 <summary>Baseline</summary>
  
+Our baseline consisted of using the rolling average of short and long windows of our data. We created signals to tell us when to buy stock (1) and when to sell stock (-1). 
+ 
 ```
 short_window = 4
 long_window = 100
   
-  
 signals_df['SMA_Fast'] = signals_df['close'].rolling(window=short_window).mean()
-signals_df['SMA_Slow'] = signals_df['close'].rolling(window=long_window).mean()
-  
-  
+signals_df['SMA_Slow'] = signals_df['close'].rolling(window=long_window).mean()  
+ 
+signals_df['Signal'] = 0.0
+signals_df.loc[(signals_df['Actual Returns'] >= 0), 'Signal'] = 1 
+signals_df.loc[(signals_df['Actual Returns'] < 0), 'Signal'] = -1 
 ```
+ 
+Using *value_counts()*, we had 2,368 signals to buy and 1,855 sginals to sell. We then trained three months worth of data to our support vector machine to train and make predictions with our data. Based on the classification report, the predictive powers of our model proved to be fairly good at predicting when we should buy, but performed poorly when predicting when to sell.
+ 
 ![image](https://user-images.githubusercontent.com/84649228/135740655-a6bb62f0-39c9-4b3b-9026-1ca4bc297823.png)
 
+Using *cumprod().plot()*, we were able to plot how our predictive model compares to the actual. The model created was fairly close to the actual data.                                                  
   
 ![image](https://user-images.githubusercontent.com/84649228/135740641-a6d9dba2-5d49-4244-afbd-ff14d553d899.png)
-
-
-
-
 
 </details>
 
