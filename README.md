@@ -117,8 +117,9 @@ long_window = 100
 signals_df['SMA_Fast'] = signals_df['close'].rolling(window=short_window).mean()
 signals_df['SMA_Slow'] = signals_df['close'].rolling(window=long_window).mean() 
 ```
-![image](https://user-images.githubusercontent.com/84649228/135740067-0adc9622-9be9-4ed6-989a-ce477c33dc4b.png)
-![image](https://user-images.githubusercontent.com/84649228/135740080-295e16c8-b447-4b68-a381-60f418e78bc0.png)
+![image](https://user-images.githubusercontent.com/84649228/135785809-81ccdc54-adcc-430b-81dc-64bd3a923b96.png)
+![image](https://user-images.githubusercontent.com/84649228/135785830-8a5c1052-9f7f-40db-8d88-62c79362ddc5.png)
+
 
 
 </details>
@@ -129,6 +130,6 @@ Now that we have tried tuning the data and training it on different classifiers,
  
 Comparing the tuned data was simple. The sixth month, one month, and the short window, 4, and long window, 50, were nearly the same outcomes. We can state that the predictive powers do not change if we change the length of time. The 100/200 windows came back with the worst outcome. This test had a low accuracy rate, but was able to predict the sell strategy better. The 50/100 and the 50/200 were similar as well, but had the best outcomes from the tuned data. It was clear that the short window, 50, and long window, 200, was the best set of indicators as each score was equivalent or better than the baseline data, with only a .01 of accuracy dropped. 
  
-The baseline compared to the new classifiers was very interesting. Their precision scores were nearly the same. AdaBoost and the original baseline had the almost the same recall scores, while logisitic regression was able to predict more instances where one should sell. The graphs of cumulative products looked nearly identical between the two classifiers, but AdaBoost predicted higher returns than then actual. Logisitic regression appears to be like AdaBoost, just less aggressively high about returns. Overall, these classifiers had nearly the same scores.
+The baseline compared to the new classifiers was very interesting. Their precision scores were nearly the same. AdaBoost and the original baseline had the almost the same recall scores, while logisitic regression was able to predict more instances where one should sell. The graphs of cumulative products looked nearly identical between the two classifiers, but AdaBoost predicted higher returns than then actual. Overall, these classifiers had nearly the same scores in precision, but their recall scores is where they differed.
  
 Based on the scores and the cumulative product graphs, it is apparent that the short window, 50, and long window, 200, was the best way to increase our predictive powers for our algorithmic trading system.
